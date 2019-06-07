@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const React = require('react');
 const http = require('http');
 const { renderToStaticMarkup } = require('react-dom/server');
@@ -15,5 +18,5 @@ const handle = (req, res) => {
 
 const server = http.createServer(handle);
 server.listen(4000, () => {
-  console.log('Listening in', 4000);
+  console.log('Listening in', process.env.PORT);
 });

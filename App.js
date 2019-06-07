@@ -1,9 +1,7 @@
 const dotenv = require('dotenv');
+dotenv.config();
 const React = require('react');
 const fetch = require('axios');
-dotenv.config();
-
-
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +12,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
+    console.log(process.env.API);
     const resp = fetch(process.env.API);
     // this.setState({
     //   resp,
